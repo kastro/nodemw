@@ -1,7 +1,8 @@
 nodemw
 ======
 
-MediaWiki API client written in node.js
+Bugfix-Fork of the original nodemw (https://github.com/macbre/nodemw)
+- MediaWiki API client written in node.js -
 
 [![NPM version](https://badge.fury.io/js/nodemw.png)](http://badge.fury.io/js/nodemw)
 [![Build Status](https://secure.travis-ci.org/macbre/nodemw.png)](http://travis-ci.org/macbre/nodemw)
