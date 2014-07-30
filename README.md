@@ -4,9 +4,6 @@ nodemw
 Bugfix-Fork of the original nodemw (https://github.com/macbre/nodemw)
 - MediaWiki API client written in node.js -
 
-[![NPM version](https://badge.fury.io/js/nodemw.png)](http://badge.fury.io/js/nodemw)
-[![Build Status](https://secure.travis-ci.org/macbre/nodemw.png)](http://travis-ci.org/macbre/nodemw)
-
 ## Requirements
 
 * nodejs
@@ -16,31 +13,15 @@ Bugfix-Fork of the original nodemw (https://github.com/macbre/nodemw)
 * [vows](http://vowsjs.org/)
 * [request](https://github.com/mikeal/request)
 
-## Installation
-
-### Using npm
-
-``` bash
-npm install nodemw
-```
-
-Or [Download the latest stable version](https://github.com/macbre/nodemw/releases) via GitHub.
-
-### Development version
-
-``` bash
-git clone https://github.com/macbre/nodemw.git
-```
-
 ## Features
 
 * HTTP requests are stored in queue and performed in serial, there's no risk of flooding the server
 * nodemw core uses promise pattern powered by [deferred-js library](https://github.com/heavylifters/deferred-js)
 * nodemw supports articles creation / edit / move / delete, file uploads (using given content or via provided URL)
 
-## Where it's used
-
-* Over 10k edits on [Poznań Wiki](http://poznan.wikia.com) as [Pyrabot](http://poznan.wikia.com/wiki/Specjalna:Wkład/Pyrabot) - [scripts repository](https://github.com/macbre/pyrabot)
+## Differences to original version
+There was a bug in macbre's original. If the user initialized a client with option "silent":true and the request failed, the logger tried
+to log into a non-initialized log-level (data). Also, as setting the cookie failed, this option was removed from the code.
 
 ## First script
 
@@ -100,7 +81,7 @@ Config file is a JSON-encoded object with the following fields (see ``/examples/
 ```
 ## Making direct API calls
 
-nodemw allows you make direct calls to MediaWiki API ([example querying Semantic MediaWiki API](https://github.com/macbre/nodemw/blob/master/examples/smw.js)):
+nodemw allows you make direct calls to MediaWiki API ([example querying Semantic MediaWiki API](https://github.com/kastro/nodemw/blob/master/examples/smw.js)):
 
 ``` js
 var bot = require('nodemw'),
